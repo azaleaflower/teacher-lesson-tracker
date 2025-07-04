@@ -10,17 +10,53 @@
   <header>
     <h1>Teacher Lesson Tracker</h1>
   </header>
+  
   <main>
-    <div id="calendar-container">
-      <!-- Monthly calendar will go here -->
-    </div>
-    <section id="weekly-overview">
-      <!-- Weekly breakdown table will go here -->
+    <section id="calendar-section">
+      <div class="calendar-header">
+        <button id="prevMonth">❮</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextMonth">❯</button>
+      </div>
+      <table id="calendar">
+        <thead>
+          <tr>
+            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+            <th>Thu</th><th>Fri</th><th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- calendar days will go here -->
+        </tbody>
+      </table>
     </section>
+
+    <section id="weekly-overview">
+      <h3>This Week's Lessons</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Class 1</th>
+            <th>Class 2</th>
+            <th>Class 3</th>
+          </tr>
+        </thead>
+        <tbody id="weekly-table">
+          <!-- weekly lessons will go here -->
+        </tbody>
+      </table>
+    </section>
+
     <section id="monthly-overview">
-      <!-- Monthly list of lessons will go here -->
+      <h3>Monthly Lesson Titles</h3>
+      <ul id="monthly-list">
+        <!-- lesson titles will go here -->
+      </ul>
     </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
+
