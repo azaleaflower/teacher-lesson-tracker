@@ -20,18 +20,20 @@ function renderCalendar(month, year) {
 
   for (let i = 0; i < 6; i++) {
     let row = document.createElement('tr');
+
     for (let j = 0; j < 7; j++) {
       if (i === 0 && j < firstDay) {
-        row.appendChild(document.createElement('td'));
+        let cell = document.createElement('td');
+        row.appendChild(cell);
       } else if (date > daysInMonth) {
-        row.appendChild(document.createElement('td'));
+        let cell = document.createElement('td');
+        row.appendChild(cell);
       } else {
         let cell = document.createElement('td');
         cell.textContent = date;
         cell.classList.add('clickable');
-        cell.dataset.day = date;
 
-        // Go to lesson.html
+        // make the cell go to lesson.html
         cell.addEventListener('click', () => {
           window.location.href = `lesson.html?day=${date}&month=${month + 1}&year=${year}`;
         });
