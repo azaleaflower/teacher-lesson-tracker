@@ -3,66 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mrs. Gomez Lesson Tracker</title>
+  <title>Mrs. Gomez Lesson Details</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Mrs. Gomez Lesson Tracker</h1>
-  </header>
-  
-  <main>
-    <section id="calendar-section">
-      <div class="calendar-header">
-        <button id="prevMonth">❮</button>
-        <h2 id="monthYear"></h2>
-        <button id="nextMonth">❯</button>
-      </div>
-      <table id="calendar">
-        <thead>
-          <tr>
-            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
-            <th>Thu</th><th>Fri</th><th>Sat</th>
-          </tr>
-        </thead>
-        <tbody id="calendar-body">
-          <!-- built by JavaScript -->
-        </tbody>
-      </table>
-    </section>
-
-    <section id="weekly-overview">
-      <h3>This Week's Lessons</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Class 1</th>
-            <th>Class 2</th>
-            <th>Class 3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Monday</td><td>-</td><td>-</td><td>-</td></tr>
-          <tr><td>Tuesday</td><td>-</td><td>-</td><td>-</td></tr>
-          <tr><td>Wednesday</td><td>-</td><td>-</td><td>-</td></tr>
-          <tr><td>Thursday</td><td>-</td><td>-</td><td>-</td></tr>
-          <tr><td>Friday</td><td>-</td><td>-</td><td>-</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="monthly-overview">
-      <h3>Monthly Lesson Titles</h3>
-      <ul>
-        <li>Week 1: Introduction & Setup</li>
-        <li>Week 2: Core Skills</li>
-        <li>Week 3: Projects</li>
-        <li>Week 4: Assessments</li>
-      </ul>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <style>
+    form {
+      background-color: #fce4ec;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1rem;
+      background-color: #d81b60;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+    #lessonSummaryTable {
+      background-color: #fff3e0;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    #lessonSummaryTable th, #lessonSummaryTable td {
+      bo
