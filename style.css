@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fce4ec; /* pastel pink background */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #f8bbd0; /* a cute header pink */
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+main {
+  padding: 1rem;
+}
