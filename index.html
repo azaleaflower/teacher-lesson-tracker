@@ -16,4 +16,59 @@
       <div class="calendar-header">
         <button id="prevMonth">❮</button>
         <h2 id="monthYear"></h2>
-        <button id="nextMon
+        <button id="nextMonth">❯</button>
+      </div>
+      <table id="calendar">
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- calendar will be built by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="weekly-overview">
+      <h3>This Week's Lessons</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Class 1</th>
+            <th>Class 2</th>
+            <th>Class 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Tuesday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Wednesday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Thursday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Friday</td><td>-</td><td>-</td><td>-</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="monthly-overview">
+      <h3>Monthly Lesson Titles</h3>
+      <ul>
+        <li>Week 1: Introduction & Setup</li>
+        <li>Week 2: Core Skills</li>
+        <li>Week 3: Projects</li>
+        <li>Week 4: Assessments</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- important: script is loaded LAST so elements exist -->
+  <script src="script.js"></script>
+</body>
+</html>
