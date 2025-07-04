@@ -21,9 +21,9 @@ function renderCalendar(month, year) {
   for (let i = 0; i < 6; i++) {
     let row = document.createElement('tr');
 
-    // add week number label as the first cell
+    // add week number in a separate left column
     let weekCell = document.createElement('td');
-    weekCell.textContent = `Week ${i + 1}`;
+    weekCell.textContent = `W${i + 1}`;
     weekCell.style.backgroundColor = "#f8bbd0";
     weekCell.style.fontWeight = "bold";
     row.appendChild(weekCell);
@@ -65,7 +65,4 @@ document.getElementById('nextMonth').addEventListener('click', () => {
     currentMonth = 0;
     currentYear++;
   }
-  renderCalendar(currentMonth, currentYear);
-});
-
-renderCalendar(currentMonth, currentYear);
+  renderCalendar(currentMonth, c
