@@ -4,6 +4,11 @@ const calendarBody = document.getElementById('calendar-body');
 let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 
+// week tracking
+let currentWeek = 1;
+const currentWeekDisplay = document.getElementById("currentWeek");
+
+// months
 const months = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -21,7 +26,6 @@ function renderCalendar(month, year) {
   for (let i = 0; i < 6; i++) {
     let row = document.createElement('tr');
 
-    // add week number
     let weekCell = document.createElement('td');
     weekCell.textContent = `W${i + 1}`;
     weekCell.style.backgroundColor = "#f8bbd0";
@@ -30,11 +34,9 @@ function renderCalendar(month, year) {
 
     for (let j = 0; j < 7; j++) {
       if (i === 0 && j < firstDay) {
-        let cell = document.createElement('td');
-        row.appendChild(cell);
+        row.appendChild(document.createElement('td'));
       } else if (date > daysInMonth) {
-        let cell = document.createElement('td');
-        row.appendChild(cell);
+        row.appendChild(document.createElement('td'));
       } else {
         let cell = document.createElement('td');
         cell.textContent = date;
@@ -50,6 +52,7 @@ function renderCalendar(month, year) {
   }
 }
 
+// prev/next month
 document.getElementById('prevMonth').addEventListener('click', () => {
   currentMonth--;
   if (currentMonth < 0) {
@@ -68,4 +71,43 @@ document.getElementById('nextMonth').addEventListener('click', () => {
   renderCalendar(currentMonth, currentYear);
 });
 
+// week overview
+document.getElementById("prevWeek").addEventListener("click", () => {
+  if (currentWeek > 1) {
+    currentWeek--;
+    updateWeekTable();
+  }
+});
+
+document.getElementById("nextWeek").addEventListener("click", () => {
+  if (currentWeek < 5) {
+    currentWeek++;
+    updateWeekTable();
+  }
+});
+
+function updateWeekTable() {
+  currentWeekDisplay.textContent = `Week ${currentWeek}`;
+  const weeklyTable = document.getElementById("weekly-table");
+
+  // clear
+  weeklyTable.innerHTML = `
+    <tr><td>Monday</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>Tuesday</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>Wednesday</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>Thursday</td><td>-</td><td>-</td><td>-</td></tr>
+    <tr><td>Friday</td><td>-</td><td>-</td><td>-</td></tr>
+  `;
+
+  const weekData = JSON.parse(localStorage.getItem(`week-${currentWeek}`));
+  if (weekData) {
+    ["Monday","Tuesday","Wednesday","Thursday","Friday"].forEach((day, index) => {
+      weeklyTable.rows[index].cells[1].textContent = weekData[day]?.class1 || "-";
+      weeklyTable.rows[index].cells[2].textContent = weekData[day]?.class2 || "-";
+      weeklyTable.rows[index].cells[3].textContent = weekData[day]?.class3 || "-";
+    });
+  }
+}
+
 renderCalendar(currentMonth, currentYear);
+updateWeekTable();
