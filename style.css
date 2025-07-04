@@ -59,6 +59,27 @@ main {
   cursor: pointer;
 }
 
+.week-nav {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.week-nav button {
+  background-color: #f8bbd0;
+  color: #4a148c;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+#currentWeek {
+  font-weight: bold;
+  color: #4a148c;
+}
+
 #weekly-overview h3,
 #monthly-overview h3 {
   color: #d81b60;
