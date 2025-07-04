@@ -3,53 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson Details</title>
+  <title>Mrs. Gomez Lesson Tracker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Mrs. Gomez Lesson Details</h1>
+    <h1>Mrs. Gomez Lesson Tracker</h1>
   </header>
+  
   <main>
-    <h2 id="lessonDate">Lesson for ...</h2>
-    <form id="lessonForm">
-      <label>Class 1:<br>
-        <input type="text" id="class1Input" placeholder="Enter subject">
-      </label><br/><br/>
-      <label>Class 2:<br>
-        <input type="text" id="class2Input" placeholder="Enter subject">
-      </label><br/><br/>
-      <label>Class 3:<br>
-        <input type="text" id="class3Input" placeholder="Enter subject">
-      </label><br/><br/>
-      <label>Notes:<br>
-        <textarea id="lessonNotes" placeholder="Add any notes..."></textarea>
-      </label><br/><br/>
-      <button type="submit">Save Lesson</button>
-    </form>
+    <section id="calendar-section">
+      <div class="calendar-header">
+        <button id="prevMonth">❮</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextMonth">❯</button>
+      </div>
+      <table id="calendar">
+        <thead>
+          <tr>
+            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+            <th>Thu</th><th>Fri</th><th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- built by JavaScript -->
+        </tbody>
+      </table>
+    </section>
 
-    <h3>Lesson Overview</h3>
-    <table id="lessonSummaryTable" style="display:none;">
-      <thead>
-        <tr>
-          <th>Class 1</th>
-          <th>Class 2</th>
-          <th>Class 3</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="summaryClass1"></td>
-          <td id="summaryClass2"></td>
-          <td id="summaryClass3"></td>
-          <td id="summaryNotes"></td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p><a href="index.html">Back to Calendar</a></p>
+    <section id="weekly-overview">
+      <h3>This Week's Lessons</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Class 1</th>
+            <th>Class 2</th>
+            <th>Class 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Tuesday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Wednesday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Thursday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Friday</td><td>-</td><td>-</td><td>-</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="monthly-overview">
+      <h3>Monthly Lesson Titles</h3>
+      <ul>
+        <li>Week 1: Introduction & Setup</li>
+        <li>Week 2: Core Skills</li>
+        <li>Week 3: Projects</li>
+        <li>Week 4: Assessments</li>
+      </ul>
+    </section>
   </main>
-  <script src="lesson.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
