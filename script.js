@@ -20,6 +20,14 @@ function renderCalendar(month, year) {
 
   for (let i = 0; i < 6; i++) {
     let row = document.createElement('tr');
+
+    // add week number label as the first cell
+    let weekCell = document.createElement('td');
+    weekCell.textContent = `Week ${i + 1}`;
+    weekCell.style.backgroundColor = "#f8bbd0";
+    weekCell.style.fontWeight = "bold";
+    row.appendChild(weekCell);
+
     for (let j = 0; j < 7; j++) {
       if (i === 0 && j < firstDay) {
         let cell = document.createElement('td');
