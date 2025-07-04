@@ -3,95 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mrs. Gomez Lesson Details</title>
+  <title>Mrs. Gomez Lesson Tracker</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    form {
-      background-color: #fce4ec;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-    input, textarea {
-      width: 100%;
-      margin-top: 0.5rem;
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      margin-top: 1rem;
-      background-color: #d81b60;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-    }
-    #lessonSummaryTable {
-      background-color: #fff3e0;
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 1rem;
-    }
-    #lessonSummaryTable th, #lessonSummaryTable td {
-      border: 1px solid #f48fb1;
-      padding: 0.5rem;
-      text-align: center;
-    }
-    #lessonSummaryTable th {
-      background-color: #f8bbd0;
-    }
-  </style>
 </head>
 <body>
   <header>
-    <h1>Mrs. Gomez Lesson Details</h1>
+    <h1>Mrs. Gomez Lesson Tracker</h1>
   </header>
+  
   <main>
-    <h2 id="lessonDate">Lesson for ...</h2>
-    <form id="lessonForm">
-      <label>Class 1:
-        <input type="text" id="class1Input" placeholder="Class 1 subject">
-      </label><br/><br/>
-      <label>Class 2:
-        <input type="text" id="class2Input" placeholder="Class 2 subject">
-      </label><br/><br/>
-      <label>Class 3:
-        <input type="text" id="class3Input" placeholder="Class 3 subject">
-      </label><br/><br/>
-      <label>Notes:
-        <textarea id="lessonNotes" placeholder="Add any notes..."></textarea>
-      </label><br/><br/>
-      <button type="submit">Save Lesson</button>
-    </form>
+    <section id="calendar-section">
+      <div class="calendar-header">
+        <button id="prevMonth">❮</button>
+        <h2 id="monthYear"></h2>
+        <button id="nextMonth">❯</button>
+      </div>
+      <table id="calendar">
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>
+            <th>Thu</th><th>Fri</th><th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- JS builds here -->
+        </tbody>
+      </table>
+    </section>
 
-    <h3>Lesson Overview</h3>
-    <table id="lessonSummaryTable" style="display:none;">
-      <thead>
-        <tr>
-          <th>Class 1</th>
-          <th>Class 2</th>
-          <th>Class 3</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="summaryClass1"></td>
-          <td id="summaryClass2"></td>
-          <td id="summaryClass3"></td>
-          <td id="summaryNotes"></td>
-        </tr>
-      </tbody>
-    </table>
+    <section id="weekly-overview">
+      <h3>This Week's Lessons</h3>
+      <div class="week-nav">
+        <button id="prevWeek">Previous Week</button>
+        <span id="currentWeek">Week 1</span>
+        <button id="nextWeek">Next Week</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Class 1</th>
+            <th>Class 2</th>
+            <th>Class 3</th>
+          </tr>
+        </thead>
+        <tbody id="weekly-table">
+          <tr><td>Monday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Tuesday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Wednesday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Thursday</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>Friday</td><td>-</td><td>-</td><td>-</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-    <br>
-    <p>
-      <a href="https://azaleaflower.github.io/teacher-lesson-tracker/">
-        Back to Calendar
-      </a>
-    </p>
+    <section id="monthly-overview">
+      <h3>Monthly Lesson Titles</h3>
+      <ul>
+        <li>Week 1: Introduction & Setup</li>
+        <li>Week 2: Core Skills</li>
+        <li>Week 3: Projects</li>
+        <li>Week 4: Assessments</li>
+      </ul>
+    </section>
   </main>
-  <script src="lesson.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
