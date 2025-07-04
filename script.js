@@ -1,18 +1,14 @@
-// Grab the elements
 const monthYear = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendar-body');
 
-// Set starting date
 let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 
-// Month names
 const months = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
-// Render the calendar
 function renderCalendar(month, year) {
   monthYear.textContent = `${months[month]} ${year}`;
   calendarBody.innerHTML = "";
@@ -38,11 +34,9 @@ function renderCalendar(month, year) {
         cell.classList.add('clickable');
         cell.dataset.day = date;
 
-        // Add a click event
+        // simple click placeholder
         cell.addEventListener('click', () => {
           alert(`You clicked ${months[month]} ${date}, ${year}`);
-          // later you can replace this alert with:
-          // openLessonDetails(date, month, year)
         });
 
         row.appendChild(cell);
@@ -53,7 +47,6 @@ function renderCalendar(month, year) {
   }
 }
 
-// Handle month switching
 document.getElementById('prevMonth').addEventListener('click', () => {
   currentMonth--;
   if (currentMonth < 0) {
@@ -72,5 +65,4 @@ document.getElementById('nextMonth').addEventListener('click', () => {
   renderCalendar(currentMonth, currentYear);
 });
 
-// Initial render
 renderCalendar(currentMonth, currentYear);
