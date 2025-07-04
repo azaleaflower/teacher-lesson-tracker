@@ -65,4 +65,7 @@ document.getElementById('nextMonth').addEventListener('click', () => {
     currentMonth = 0;
     currentYear++;
   }
-  renderCalendar(currentMonth, c
+  renderCalendar(currentMonth, currentYear);
+});
+
+renderCalendar(currentMonth, currentYear);
