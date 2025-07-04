@@ -21,7 +21,7 @@ function renderCalendar(month, year) {
   for (let i = 0; i < 6; i++) {
     let row = document.createElement('tr');
 
-    // add week number in a separate left column
+    // add week number
     let weekCell = document.createElement('td');
     weekCell.textContent = `W${i + 1}`;
     weekCell.style.backgroundColor = "#f8bbd0";
