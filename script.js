@@ -1,7 +1,7 @@
 const monthYear = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendar-body');
 
-let currentMonth = new Date().getMonth();
+let currentMonth = new Date().getMonth();alert(`You clicked ${months[month]} ${date}, ${year}`);
 let currentYear = new Date().getFullYear();
 
 const months = [
@@ -35,10 +35,10 @@ function renderCalendar(month, year) {
         cell.dataset.day = date;
 
         // simple click placeholder
-        cell.addEventListener('click', () => {
-          alert(`You clicked ${months[month]} ${date}, ${year}`);
-        });
-
+    cell.addEventListener('click', () => {
+  window.location.href = `lesson.html?day=${date}&month=${month + 1}&year=${year}`;
+});
+        
         row.appendChild(cell);
         date++;
       }
