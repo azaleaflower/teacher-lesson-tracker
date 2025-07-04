@@ -1,7 +1,7 @@
 const monthYear = document.getElementById('monthYear');
 const calendarBody = document.getElementById('calendar-body');
 
-let currentMonth = new Date().getMonth();alert(`You clicked ${months[month]} ${date}, ${year}`);
+let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 
 const months = [
@@ -20,25 +20,22 @@ function renderCalendar(month, year) {
 
   for (let i = 0; i < 6; i++) {
     let row = document.createElement('tr');
-
     for (let j = 0; j < 7; j++) {
       if (i === 0 && j < firstDay) {
-        let cell = document.createElement('td');
-        row.appendChild(cell);
+        row.appendChild(document.createElement('td'));
       } else if (date > daysInMonth) {
-        let cell = document.createElement('td');
-        row.appendChild(cell);
+        row.appendChild(document.createElement('td'));
       } else {
         let cell = document.createElement('td');
         cell.textContent = date;
         cell.classList.add('clickable');
         cell.dataset.day = date;
 
-        // simple click placeholder
-    cell.addEventListener('click', () => {
-  window.location.href = `lesson.html?day=${date}&month=${month + 1}&year=${year}`;
-});
-        
+        // Go to lesson.html
+        cell.addEventListener('click', () => {
+          window.location.href = `lesson.html?day=${date}&month=${month + 1}&year=${year}`;
+        });
+
         row.appendChild(cell);
         date++;
       }
