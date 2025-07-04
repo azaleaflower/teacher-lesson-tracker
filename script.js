@@ -20,7 +20,6 @@ function renderCalendar(month, year) {
 
   for (let i = 0; i < 6; i++) {
     let row = document.createElement('tr');
-
     for (let j = 0; j < 7; j++) {
       if (i === 0 && j < firstDay) {
         let cell = document.createElement('td');
@@ -32,12 +31,9 @@ function renderCalendar(month, year) {
         let cell = document.createElement('td');
         cell.textContent = date;
         cell.classList.add('clickable');
-
-        // make the cell go to lesson.html
         cell.addEventListener('click', () => {
           window.location.href = `lesson.html?day=${date}&month=${month + 1}&year=${year}`;
         });
-
         row.appendChild(cell);
         date++;
       }
