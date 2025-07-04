@@ -16,7 +16,7 @@ const summaryClass2 = document.getElementById("summaryClass2");
 const summaryClass3 = document.getElementById("summaryClass3");
 const summaryNotes = document.getElementById("summaryNotes");
 
-// load saved data
+// load
 const saved = JSON.parse(localStorage.getItem(`${year}-${month}-${day}`));
 if (saved) {
   class1Input.value = saved.class1 || "";
@@ -41,7 +41,7 @@ document.getElementById("lessonForm").addEventListener("submit", (e) => {
   };
   localStorage.setItem(`${year}-${month}-${day}`, JSON.stringify(data));
 
-  // update the table
+  // update summary
   summaryClass1.textContent = data.class1 || "-";
   summaryClass2.textContent = data.class2 || "-";
   summaryClass3.textContent = data.class3 || "-";
