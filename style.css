@@ -1,7 +1,6 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #ffe4f0; /* light pastel pink */
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #ffe4f0; /* pastel pink */
   margin: 0;
   padding: 0;
 }
@@ -12,7 +11,7 @@ header {
   padding: 1.5rem;
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 3px solid #f48fb1;
+  color: #4a148c;
 }
 
 main {
@@ -29,7 +28,7 @@ main {
 
 #monthYear {
   font-size: 1.4rem;
-  color: #d81b60;
+  color: #6a1b9a;
 }
 
 #calendar {
@@ -55,46 +54,43 @@ main {
   transition: background-color 0.3s ease;
 }
 
-#calendar td.clickable:hover {
+#calendar td:hover {
   background-color: #f8bbd0;
   cursor: pointer;
-}
-
-section {
-  margin-top: 2rem;
 }
 
 #weekly-overview h3,
 #monthly-overview h3 {
   color: #d81b60;
   border-bottom: 2px solid #f48fb1;
-  padding-bottom: 0.3rem;
+  margin-top: 2rem;
 }
 
 #weekly-overview table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #f3e5f5;
+  background-color: #fce4ec;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 1rem;
 }
 
 #weekly-overview th,
 #weekly-overview td {
-  border: 1px solid #ce93d8;
+  border: 1px solid #f48fb1;
   padding: 0.5rem;
   text-align: center;
 }
 
 #weekly-overview th {
-  background-color: #e1bee7;
+  background-color: #f8bbd0;
   color: #4a148c;
 }
 
-#monthly-list {
+#monthly-overview ul {
   background-color: #fff3e0;
   border: 1px solid #ffcc80;
   border-radius: 10px;
   padding: 1rem;
-  list-style: disc;
+  margin-top: 1rem;
 }
