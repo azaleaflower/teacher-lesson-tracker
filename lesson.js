@@ -1,3 +1,4 @@
+// get the day/month/year from URL
 const params = new URLSearchParams(window.location.search);
 const day = params.get("day");
 const month = params.get("month");
@@ -10,7 +11,7 @@ const class2Input = document.getElementById("class2Input");
 const class3Input = document.getElementById("class3Input");
 const lessonNotes = document.getElementById("lessonNotes");
 
-// load previous data if it exists
+// load saved data
 const saved = JSON.parse(localStorage.getItem(`${year}-${month}-${day}`));
 if (saved) {
   class1Input.value = saved.class1 || "";
@@ -19,6 +20,7 @@ if (saved) {
   lessonNotes.value = saved.notes || "";
 }
 
+// save on submit
 document.getElementById("lessonForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const data = {
